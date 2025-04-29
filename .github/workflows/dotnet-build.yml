@@ -15,11 +15,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 8.0.x
+
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore github4women/github4women.csproj
+
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build github4women/github4women.csproj --no-restore
